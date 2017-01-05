@@ -23,7 +23,8 @@ RUN apt-get install -y apt-utils
 RUN apt-get install -y wget build-essential bind9utils libbind-dev libkrb5-dev libssl-dev libcap-dev libxml2-dev dnsutils geoip-bin libgeoip-dev 
 RUN wget ftp://ftp.nominum.com/pub/nominum/dnsperf/2.1.0.0/dnsperf-src-2.1.0.0-1.tar.gz
 RUN tar -xvzf dnsperf-src-2.1.0.0-1.tar.gz
-RUN cd /dnsperf-src-2.1.0.0-1 
-RUN ./configure 
-RUN make 
-RUN make install
+RUN cd dnsperf-src-2.1.0.0-1 && \ 
+#RUN pwd && cd dnsperf-src-2.1.0.0-1 && pwd
+./configure && \ 
+make && \ 
+make install
